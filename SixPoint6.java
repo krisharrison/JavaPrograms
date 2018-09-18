@@ -6,36 +6,25 @@ public class SixPoint6 {
 
         Scanner input = new Scanner(System.in);
 
-        while (true) {
-            try {
+                    displayPattern();
 
-                System.out.print("Please enter an integer: ");
-                int num = input.nextInt();
 
-                if(num < 2){
-                    System.out.println("Please enter a number greater than 1");
-                }
-                else{
-
-                    displayPattern(num);
-                    break;
-                }
-
-            } catch (InputMismatchException e) {
-
-                System.out.println("Please enter a valid number");
-                input.next();
-            }
-        }
     }
-        public static void displayPattern(int num){
+        public static void displayPattern(){
+        int num = 3;
+        for(int i = 1; i <= 4; i++){
+                for(int j = 3; j >= 1; j--){
 
-        for(int i = 1; i < num; i++){
-                System.out.println(i);
-                for(int j = 0; num > j; num--){
+                    if(j < i){
+                        System.out.print(num);
+                    }
+                    else{
+                        System.out.print(" ");
+                    }
 
-                    System.out.print(num + " ");
+                    num--;
                 }
+                num = 3;
                 System.out.println("");
             }
     }
