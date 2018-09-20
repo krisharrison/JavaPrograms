@@ -21,16 +21,16 @@ public class SixPoint7 {
 
     }
     public static void displayFutureInvestments(double investmentAmount, double monthlyInterestRate, int numOfYears){
-        /*System.out.print("\n\nYears     Future Value");
+        System.out.print("\n\nYears     Future Value");
         for(int i = 1; i <= numOfYears; i ++){
             System.out.printf("\n %d\t\t\t%.2f", i, calcFutureInvestment(investmentAmount,monthlyInterestRate,i));
-        }*/
+        }
 
-        System.out.printf("\n %.2f", calcFutureInvestment(investmentAmount,monthlyInterestRate,numOfYears));
+
     }
     public static double calcFutureInvestment(double investmentAmount, double monthlyInterestRate, int numOfYears) {
 
-        return investmentAmount * Math.pow((1 + monthlyInterestRate), numOfYears);
+        return investmentAmount * Math.pow((1 + monthlyInterestRate), numOfYears * 12);
     }
 
 }
