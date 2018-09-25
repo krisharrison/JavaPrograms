@@ -15,14 +15,14 @@ public class SixPoint11 {
 
         double commision = 0;
 
-        if(salesAmount > 0.01 || salesAmount < 5000){
-            commision += (salesAmount * 0.08);
+        if(salesAmount >= 0.01 && salesAmount <= 5000){
+            commision += salesAmount * 0.08;
         }
-        else if(salesAmount > 5000.01 && salesAmount < 10000){
-            commision += (salesAmount * 0.10);
+        else if(salesAmount >= 5000.01 && salesAmount <= 10000){
+            commision += salesAmount * 0.09;
         }
-        else if(salesAmount > 10000.01){
-            commision += (salesAmount * 0.12);
+        else{
+            commision += salesAmount * 0.10;
         }
         return commision;
     }
