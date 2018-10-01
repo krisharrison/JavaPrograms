@@ -5,6 +5,7 @@ public class SixPoint13 {
     }
     public static void displayM(){
         System.out.print("i\t\t\tm(i)");
+        System.out.print("\n--------------------");
         double numerator = 1;
         double denominator = 2;
         double result = 0;
