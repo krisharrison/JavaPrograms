@@ -8,7 +8,7 @@ public class SixPoint18 {
         while(true) {
             try {
 
-                System.out.print("\nPlease enter the a valid password: ");
+                System.out.print("\n\nPlease enter the a valid password: ");
                 String password = input.next();
 
                 if(checkNumOfCharacters(password) == false){
@@ -35,6 +35,8 @@ public class SixPoint18 {
 
 
 
+
+
     }
 
     /**
@@ -44,13 +46,13 @@ public class SixPoint18 {
      * @return true or false
      */
     public static boolean checkNumOfCharacters(String password){
-        boolean validNumOfChars = false;
+        boolean validNumOfChars = false;//Init validNumOfChars to false
 
-        if(password.length() >= 8){
-            validNumOfChars = true;
+        if(password.length() >= 8){//If the length of password is 8 or greater
+            validNumOfChars = true; //Init validNumOfChars to true
         }
 
-        return validNumOfChars;
+        return validNumOfChars;//return value of validNumOfChars as a boolean
     }
 
     /**
@@ -59,19 +61,23 @@ public class SixPoint18 {
      * @return true or false
      */
     public static boolean isDigitsAndLetters(String password){
-        boolean isDigitsAndLetters = false;
+        boolean isDigitsAndLetters = true; //Init isDigitsAndLetters
+        char [] invalidChars = {0,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,58,59,60,61,62,63,64,91,92,93,94,95,96,123,124,125,126,127};
+        //Declare and init Array invalidChars to a list of invalid chars not allowed to be used in a password
 
-        for(int index = 0; index < password.length(); index++){
+        for(int index = 0; index < password.length(); index++) {//cycle through chars of password
+            for (int invalidCharsIndex = 0; invalidCharsIndex < invalidChars.length; invalidCharsIndex++) {//cycle through invalid chars
 
-            if((password.charAt(index) >= '0' && password.charAt(index) <= '9') || (password.charAt(index) >= 'A' && password.charAt(index) <= 'Z') ||
-                    (password.charAt(index) >= 'a' && password.charAt(index) <= 'z')){
+                if (password.charAt(index) == invalidChars[invalidCharsIndex]) {//if a char from password is equal to any of the invalid characters in invalidChars array
 
-                isDigitsAndLetters = true;
+                    isDigitsAndLetters = false; // set isDigitsAndLetters to false
+                    break; //break loop
+                }
+
             }
-
         }
-        return isDigitsAndLetters;
 
+        return isDigitsAndLetters;//return value of isDigitsAndLetters as a boolean
     }
 
     /**
@@ -80,21 +86,26 @@ public class SixPoint18 {
      * @return true or false
      */
     public static boolean containsTwoDigits(String password){
-        boolean containsTwoDigits = false;
-        int counter = 0;
+        boolean containsTwoDigits = false; //Init containsTwo digits to false
+        char [] numbers = {'0','1','2','3','4','5','6','7','8','9'}; //Array of numbers as chars
+        int counter = 0; // Init counter to 0; used to count the number of digits in password
 
-        for(int index = 0; index < password.length(); index++){
+        for(int index = 0; index < password.length(); index++){//cycle through each char of password
+            for(int numsIndex = 0; numsIndex < numbers.length; numsIndex++){//cycle through numbers array of chars
 
-            if(password.charAt(index) >= '0' || password.charAt(index) <= '9')
-                counter++;
+                if(password.charAt(index) == numbers[numsIndex]){//if a char in the password is equal to any of the chars stored in array numbers increase counter by one
+                    counter++;//increase counter by one
+                }
+
+            }
+            if(counter >= 2){//if counter is 2 or more
+                containsTwoDigits = true;//store true in containsTwoDigits to true
+                break;//break out of loop
+            }
+
         }
 
 
-        if(counter > 2)
-            containsTwoDigits = true;
-        else
-            containsTwoDigits = false;
-
-        return containsTwoDigits;
+        return containsTwoDigits;//return containsTwoDigits
     }
 }
