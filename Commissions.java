@@ -1,4 +1,4 @@
-public class SixPoint11 {
+public class Commissions{
     public static void main(String [] args){
 
         displayCommissionRate();
