@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SixPoint16 {
+public class DaysInAYear{
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);
