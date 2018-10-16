@@ -1,8 +1,6 @@
-<<<<<<< HEAD:FeetToMetres.java
-public class FeetToMetres {
-=======
+
 public class FeetToMetres{
->>>>>>> da761114ee7b5eecc0435747cc38436eb932e7d7:FeetToMetres.java
+
     public static void main(String [] args){
 
         displayResult();

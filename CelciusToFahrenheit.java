@@ -14,11 +14,11 @@ public class CelciusToFahrenheit{
                 userInput = input.next();
 
                 if(userInput.toUpperCase().equals("FAHRENHEIT")){
-                        System.out.print("\n Please enter the temperature in Fahrenheit: ");
-                        userTemperature = input.nextDouble();
+                    System.out.print("\n Please enter the temperature in Fahrenheit: ");
+                    userTemperature = input.nextDouble();
 
-                      FutureInvestmentValue  System.out.printf("\n %.1f Degrees Fahrenheit is %.1f Degrees Celsius.", userTemperature, fahrenheitToCelsius(userTemperature));
-                        break;
+                    System.out.printf("\n %.1f Degrees Fahrenheit is %.1f Degrees Celsius.", userTemperature, fahrenheitToCelsius(userTemperature));
+                    break;
 
                 }else if( userInput.toUpperCase().equals("CELSIUS")){
                     System.out.print("\n Please enter the temperature in Celsius: ");

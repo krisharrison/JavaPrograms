@@ -1,11 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-<<<<<<< HEAD:Matrix.java
-public class Matrix {
-=======
 public class Matrix{
->>>>>>> da761114ee7b5eecc0435747cc38436eb932e7d7:Matrix.java
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);

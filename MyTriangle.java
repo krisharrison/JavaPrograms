@@ -16,7 +16,7 @@ public class MyTriangle {
                     System.out.printf("%n The area of the triangle is: %.2f", calcArea(side1,side2,side3));
                 }
                 else{
-                    System.out.println("\nPlease enter in lengths for a a valid triangle. E.g. ")
+                    System.out.println("\nPlease enter in lengths for a a valid triangle. E.g. ");
                 }
 
             }
@@ -29,9 +29,16 @@ public class MyTriangle {
 
 
     }
-    /*public static boolean isValid(double side1, double side2, double, double side3){
+    public static boolean isValid(double side1, double side2, double, double side3){
 
-    }*/
+        boolean isValid = false;
+
+        if(((side1 + side2) > side3) || ((side1 + side3) > side2) || ((side2 + side3) > side1)){
+            isValid = true;
+        }
+
+        return isValid;
+    }
     public static double calcArea(double side1, double side2, double side3){
 
         double s = (side1 + side2 + side3) / 2;

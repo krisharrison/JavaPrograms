@@ -1,8 +1,5 @@
-<<<<<<< HEAD:EstimatePI.java
-public class EstimatePI {
-=======
+
 public class EstimatePI{
->>>>>>> da761114ee7b5eecc0435747cc38436eb932e7d7:EstimatePI.java
     public static void main(String [] args){
 
         displayM();
