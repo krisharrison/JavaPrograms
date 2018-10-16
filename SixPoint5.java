@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-public class IntegerReverse{
+public class SixPoint5{
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);
@@ -17,7 +17,7 @@ public class IntegerReverse{
                 System.out.println("Enter a third number: ");
                 double num3 = input.nextDouble();
 
-                if(num1 < 0 || num2 < 0 || num3 < 0){
+                if(num1 IntegerReverse< 0 || num2 < 0 || num3 < 0){
                     System.out.println("Please enter a positive value");
                 }
                 else{
