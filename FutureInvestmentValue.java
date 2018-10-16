@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SixPoint7 {
+public class FutureInvestmentValue{
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);
