@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class SixPoint17 {
+public class Matrix{
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);
