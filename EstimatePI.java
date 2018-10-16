@@ -1,4 +1,4 @@
-public class SixPoint14 {
+public class EstimatePI{
     public static void main(String [] args){
 
         displayM();
