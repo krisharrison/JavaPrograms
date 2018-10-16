@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class TaxTable {
+public class TaxTable{
+
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);

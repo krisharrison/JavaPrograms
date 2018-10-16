@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class CelciusToFahrenheit {
+public class CelciusToFahrenheit{
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);
@@ -17,7 +17,7 @@ public class CelciusToFahrenheit {
                         System.out.print("\n Please enter the temperature in Fahrenheit: ");
                         userTemperature = input.nextDouble();
 
-                        System.out.printf("\n %.1f Degrees Fahrenheit is %.1f Degrees Celsius.", userTemperature, fahrenheitToCelsius(userTemperature));
+                      FutureInvestmentValue  System.out.printf("\n %.1f Degrees Fahrenheit is %.1f Degrees Celsius.", userTemperature, fahrenheitToCelsius(userTemperature));
                         break;
 
                 }else if( userInput.toUpperCase().equals("CELSIUS")){

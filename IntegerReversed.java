@@ -2,7 +2,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
+<<<<<<< HEAD:IntegerReversed.java
 public class IntegerReversed {
+=======
+public class IntegerReversed{
+>>>>>>> da761114ee7b5eecc0435747cc38436eb932e7d7:IntegerReversed.java
     public static void main(String [] args) {
 
         Scanner input = new Scanner(System.in);

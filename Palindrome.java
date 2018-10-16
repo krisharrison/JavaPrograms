@@ -1,7 +1,11 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+<<<<<<< HEAD:Palindrome.java
 public class Palindrome {
+=======
+public class Palindrome{
+>>>>>>> da761114ee7b5eecc0435747cc38436eb932e7d7:Palindrome.java
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);

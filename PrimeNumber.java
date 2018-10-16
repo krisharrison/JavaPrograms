@@ -1,4 +1,8 @@
+<<<<<<< HEAD:PrimeNumber.java
 public class PrimeNumber {
+=======
+public class PrimeNumber{
+>>>>>>> da761114ee7b5eecc0435747cc38436eb932e7d7:PrimeNumber.java
     public static void main(String [] args){
         displayPrimes();
     }

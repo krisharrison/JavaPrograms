@@ -1,7 +1,11 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+<<<<<<< HEAD:SumOfAllDigits.java
 public class SumOfAllDigits {
+=======
+public class SumOfAllDigits{
+>>>>>>> da761114ee7b5eecc0435747cc38436eb932e7d7:SumOfAllDigits.java
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);

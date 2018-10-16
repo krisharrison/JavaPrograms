@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
+<<<<<<< HEAD:PentagonalNumbersTwo.java
 public class PentagonalNumbersTwo {
+=======
+public class PentagonalNumbersTwo{
+>>>>>>> da761114ee7b5eecc0435747cc38436eb932e7d7:PentagonalNumbersTwo.java
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);

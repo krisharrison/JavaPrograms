@@ -1,7 +1,11 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
+<<<<<<< HEAD:SortThreeNumbers.java
 public class SortThreeNumbers {
+=======
+public class SortThreeNumbers{
+>>>>>>> da761114ee7b5eecc0435747cc38436eb932e7d7:SortThreeNumbers.java
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);
@@ -17,7 +21,7 @@ public class SortThreeNumbers {
                 System.out.println("Enter a third number: ");
                 double num3 = input.nextDouble();
 
-                if(num1 < 0 || num2 < 0 || num3 < 0){
+                if(num1 IntegerReverse< 0 || num2 < 0 || num3 < 0){
                     System.out.println("Please enter a positive value");
                 }
                 else{

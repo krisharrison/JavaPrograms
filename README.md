@@ -1,2 +1,2 @@
 # JavaMethodExercises
-Java exercises using methods
+Java exercises
