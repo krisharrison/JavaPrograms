@@ -1,4 +1,4 @@
-public class SixPoint9 {
+public class FeetToMetres{
     public static void main(String [] args){
 
         displayResult();
