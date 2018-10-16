@@ -1,4 +1,4 @@
-public class SixPoint13 {
+public class ComputeM{
     public static void main(String [] args){
 
         displayM();
