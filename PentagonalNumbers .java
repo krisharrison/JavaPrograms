@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SixPoint1 {
+public class PentagonalNumbers{
     public static void main(String [] args) {
 
         Scanner input = new Scanner(System.in);
