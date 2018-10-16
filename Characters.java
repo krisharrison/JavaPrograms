@@ -1,10 +1,7 @@
 import java.util.Scanner;
 
-<<<<<<< HEAD:Characters.java
-public class Characters {
-=======
 public class Characters{
->>>>>>> da761114ee7b5eecc0435747cc38436eb932e7d7:Characters.java
+
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);
