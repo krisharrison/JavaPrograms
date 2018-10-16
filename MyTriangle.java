@@ -29,9 +29,9 @@ public class MyTriangle {
 
 
     }
-    public static boolean isValid(double side1, double side2, double, double side3){
+    /*public static boolean isValid(double side1, double side2, double, double side3){
 
-    }
+    }*/
     public static double calcArea(double side1, double side2, double side3){
 
         double s = (side1 + side2 + side3) / 2;
