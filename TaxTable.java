@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SixPoint15 {
+public class TaxTable {
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);

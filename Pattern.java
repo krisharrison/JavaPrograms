@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-public class SixPoint6 {
+public class Pattern{
     public static void main(String [] args) {
 
         Scanner input = new Scanner(System.in);

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SixPoint8 {
+public class CelciusToFahrenheit {
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);

@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class SixPoint3 {
+public class Palindrome {
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);
