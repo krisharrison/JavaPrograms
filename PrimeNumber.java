@@ -1,4 +1,4 @@
-public class SixPoint10 {
+public class PrimeNumber{
     public static void main(String [] args){
         displayPrimes();
     }
