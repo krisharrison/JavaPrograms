@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SixPoint18 {
+public class CheckPassword {
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);
