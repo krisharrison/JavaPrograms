@@ -38,7 +38,7 @@ public class Letters {
     /**
      * Check if word is valid
      * @param word
-     * @return
+     * @return boolean
      */
     public static boolean isValid(String word){
         //Array of invalid characters for user input
