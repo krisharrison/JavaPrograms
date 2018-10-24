@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class BabylonianMethod {
@@ -8,6 +9,7 @@ public class BabylonianMethod {
     }
     public static double sqrt(long n){
         double sqrt = 0.0;
+        Random guess = new Random();
 
         return sqrt;
     }
