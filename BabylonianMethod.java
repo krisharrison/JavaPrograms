@@ -7,10 +7,18 @@ public class BabylonianMethod {
         Scanner input = new Scanner(System.in);
 
     }
-    public static double sqrt(long n){
+    public static double sqrt(int n){
         double sqrt = 0.0;
-        Random guess = new Random();
+        int guess = 1 + n;
+        Random num = new Random();
+        num.nextInt(guess);
+        int lastGuess =  num.nextInt(guess);
+        int nextGuess = 0;
 
+
+        while (lastGuess - nextGuess != 0.001){
+
+        }
         return sqrt;
     }
 }
