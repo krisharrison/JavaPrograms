@@ -16,8 +16,10 @@ public class BabylonianMethod {
         int nextGuess = 0;
 
 
-        while (lastGuess - nextGuess != 0.001){
+        while (true){
 
+            nextGuess = (lastGuess + n / lastGuess) / 2;
+            lastGuess = nextGuess;
         }
         return sqrt;
     }
