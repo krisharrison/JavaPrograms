@@ -25,6 +25,7 @@ public class BabylonianMethod {
             }//end catch
         }//End while
 
+
     }
 
     /**
@@ -37,20 +38,19 @@ public class BabylonianMethod {
         int guess = 1 + n; //Declare guess as an Integer. Init to n + 1
         Random num = new Random(); // Create random object
         double lastGuess = 10; //num.nextInt(guess); // Store random number to last guess. Pass guess through nextInt
-        double nextGuess = 0; // Declare nextGuess as a double. Init nextGuess to 0
+        double nextGuess = 0.0; // Declare nextGuess as a double. Init nextGuess to 0
 
 
         while (true){//While loop
 
             nextGuess = (lastGuess + n / lastGuess) / 2;//Babylonian formula to approximate square root
 
-            if((lastGuess - nextGuess < 0.001) || (nextGuess - lastGuess < 0.001)){//If nextGuess and lastGuess is similar
+            if(((lastGuess - nextGuess) < 0.001)){//If nextGuess and lastGuess is similar
                 sqrt = nextGuess;// Init sqrt to nextGuess
-                break;//Break loop
+                break;//Break while loop
             }//End if
             else {//Else
                 lastGuess = nextGuess; //Init lastGuess to nextGuess
-                //Continue Babylonian formula
             }//End else
 
         }//End While
