@@ -13,9 +13,10 @@ public class OccurenceOfCharacter {
                 System.out.print("\nPlease enter in a character: ");
                 char letter = input.next().charAt(0);//input for wanted letter
 
-                if(isValid(word) == true && isLetterValid(letter) == true){//Begin If
+                if((isValid(word) == true && isLetterValid(letter) == true)){//Begin If
 
                     System.out.printf("\nNumber of times %c appears in %s is %d",letter,word,charCount(word,letter));//Display results
+                    break;
 
                 }//End if
                 else{//Begin else
@@ -29,6 +30,8 @@ public class OccurenceOfCharacter {
                 input.next();//Next
             }//End Catch
         }//End while
+
+      
     }
 
     /**
@@ -45,7 +48,7 @@ public class OccurenceOfCharacter {
             letter -= 32;//Convert lower case to upper case
 
         }//End If
-        
+
         for(int index=0;index<word.length();index++){//Begin For
 
             if(word.toUpperCase().charAt(index) == letter)//Begin If
@@ -69,9 +72,10 @@ public class OccurenceOfCharacter {
 
         for(int index=0; index < word.length();index++){//Outer For Begin
             for(int index2 = 0; index2 < invalidChars.length; index2++){//Inner For Begin
-                    if(word.charAt(index) == invalidChars[index2])
+                    if(word.charAt(index) == invalidChars[index2]) {
                         isValid = false;
                         break;
+                    }
             }//End Inner For
         }//End Outer For
 
@@ -92,9 +96,10 @@ public class OccurenceOfCharacter {
 
 
             for(int index2 = 0; index2 < invalidChars.length; index2++){//Inner For Begin
-                if(invalidChars[index2] == letter)//If Begin
+                if(invalidChars[index2] == letter) {//If Begin
                     isValid = false;//isValid init false
                     break;//Break loop
+                }
             }//End Inner For
 
 
