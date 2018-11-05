@@ -15,7 +15,7 @@ public class BabylonianMethod {
                     System.out.print("\nInvalid!");//User input is invalid
                 }
                 else {//else
-                    System.out.printf("\nApproximate square root of %d is: %.4f", n, sqrt(n));//Output results to console
+                    System.out.printf("\nApproximate square root of %d is: %.5f\n\n", n, sqrt(n));//Output results to console
                     break;//break while
                 }
             }//End try
@@ -37,8 +37,8 @@ public class BabylonianMethod {
         double sqrt = 0.0; //Declare sqt as a double. Init  to 0.0
         int guess = 1 + n; //Declare guess as an Integer. Init to n + 1
         Random num = new Random(); // Create random object
-        double lastGuess = 10; //num.nextInt(guess); // Store random number to last guess. Pass guess through nextInt
-        double nextGuess = 0.0; // Declare nextGuess as a double. Init nextGuess to 0
+        double lastGuess = num.nextInt(guess); // Store random number to last guess. Pass guess through nextInt
+        double nextGuess = 0; // Declare nextGuess as a double. Init nextGuess to 0
 
 
         while (true){//While loop
@@ -47,10 +47,11 @@ public class BabylonianMethod {
 
             if(((lastGuess - nextGuess) < 0.001)){//If nextGuess and lastGuess is similar
                 sqrt = nextGuess;// Init sqrt to nextGuess
-                break;//Break while loop
+                break;//Break loop
             }//End if
             else {//Else
                 lastGuess = nextGuess; //Init lastGuess to nextGuess
+                //Continue Babylonian formula
             }//End else
 
         }//End While
