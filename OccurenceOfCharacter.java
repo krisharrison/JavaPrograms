@@ -31,7 +31,7 @@ public class OccurenceOfCharacter {
             }//End Catch
         }//End while
 
-      
+
     }
 
     /**
