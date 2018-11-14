@@ -9,7 +9,12 @@ public class Craps{
         while(true) {
             try {
 
+                System.out.print("");
+                String start = input.next();
+
             } catch (Exception e) {
+                System.out.print("\nPlease enter in a valid answer");
+                input.next();
 
             }
         }
