@@ -13,20 +13,31 @@ public class CreditCard {
 
                 long doubledCreditCard = 0;//Store doubled digits of credit card
                 int count = 0;
+                long digit = 0;
+                long doubledDigit = 0;
 
 
                 while(creditCard != 0){//While
 
-                    if(count % 2 == 0) {
-                        doubledCreditCard *= 10;
-                        doubledCreditCard += getDigit((creditCard % 10) * 2);
-                        creditCard /= 10;
+                    System.out.println("Count: " + count + " Credit Card: " + creditCard);
+
+
+                    if(count % 2 != 0) {
+                        doubledCreditCard *= 10; //Shift numbers to the left
+                        digit = creditCard % 10; //Extract right most digit
+                        doubledCreditCard += getDigit((int) digit);//Pass digit through getDigit
                     }
+
+                    creditCard /= 10;//Eliminate right most digit
+
+
+                    //4388576018402626
+                    //3434087203517768
 
                     count++;
                 }//End while
 
-                System.out.println(doubledCreditCard);
+                System.out.println("\n" + doubledCreditCard);
                 break;
             }//End try
             catch(Exception e){//Catch
@@ -34,8 +45,6 @@ public class CreditCard {
                 input.next();
             }//End catch
         }//End while
-
-
 
     }
 
@@ -62,10 +71,11 @@ public class CreditCard {
      * @param number
      * @return
      */
-    public static int getDigit(long number){
+    public static int getDigit(int number){
         int count = 0;
         int temp = 0;
         int secondDigit;
+        number *= 2;
 
         while(number != 0){
             temp *= 10;
@@ -86,7 +96,6 @@ public class CreditCard {
 
         return temp;
     }
-
     /**
      *Return the sum of odd place digits
      * @param number
