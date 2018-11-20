@@ -5,16 +5,21 @@ public class CreditCard {
 
         Scanner input = new Scanner(System.in);
 
+        long evenDoubledNumber = 0;//Store doubled digits of credit card
+        int count = 0;
+        long evenDigit = 0;
+        long oddDigit = 0;
+        long oddDoubledNumber = 0;
+        int total = 0;
+
+
         while(true){//While Loop
             try{//Try
 
                 System.out.print("\nEnter a valid number: ");
                 long creditCard = input.nextLong();//Input from user
 
-                long doubledCreditCard = 0;//Store doubled digits of credit card
-                int count = 0;
-                long digit = 0;
-                long doubledDigit = 0;
+
 
 
                 while(creditCard != 0){//While
@@ -23,13 +28,17 @@ public class CreditCard {
 
 
                     if(count % 2 != 0) {
-                        doubledCreditCard *= 10; //Shift numbers to the left
-                        digit = creditCard % 10; //Extract right most digit
-                        doubledCreditCard += getDigit((int) digit);//Pass digit through getDigit
+                        evenDoubledNumber *= 10; //Shift numbers to the left
+                        evenDigit = creditCard % 10; //Extract right most digit
+                        evenDoubledNumber += getDigit((int) evenDigit);//Pass even digit through getDigit
+                    }
+                    else if(count % 2 == 0){
+                        oddDoubledNumber *= 10; //Shift numbers to the left
+                        oddDigit = creditCard % 10; //Extract right most digit
+                        oddDoubledNumber += oddDigit;//Pass odd digit through getDigit
                     }
 
                     creditCard /= 10;//Eliminate right most digit
-
 
                     //4388576018402626
                     //3434087203517768
@@ -37,7 +46,11 @@ public class CreditCard {
                     count++;
                 }//End while
 
-                System.out.println("\n" + doubledCreditCard);
+                total = sumOfDoubleEvenPlace((int)evenDoubledNumber) + (int)sumOfOddPlace((int)oddDoubledNumber);
+
+                System.out.println(total);
+
+                //System.out.println("\nEven:" + evenDoubledNumber + "\n Odd: " + oddDoubledNumber);
                 break;
             }//End try
             catch(Exception e){//Catch
@@ -62,8 +75,17 @@ public class CreditCard {
      * @param number
      * @return
      */
-   /* public static int sumOfDoubleEvenPlace(int number){
+    public static int sumOfDoubleEvenPlace(int number){
 
+        int total = 0;
+
+        while(number != 0){
+
+            total += number % 10;
+            number /= 10;
+        }
+
+        return total;
     }
 
     /**
@@ -101,8 +123,16 @@ public class CreditCard {
      * @param number
      * @return
      */
-  /*  public static int sumOfOddPlace(int number){
+  public static int sumOfOddPlace(int number){
+      int total = 0;
 
+      while(number != 0){
+
+          total += number % 10;
+          number /= 10;
+      }
+
+      return total;
     }
 
     /**
