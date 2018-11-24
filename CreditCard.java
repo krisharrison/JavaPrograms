@@ -5,12 +5,15 @@ public class CreditCard {
 
         Scanner input = new Scanner(System.in);
 
-        long evenDoubledNumber = 0;//Store doubled digits of credit card
-        int count = 0;
-        long evenDigit = 0;
-        long oddDigit = 0;
-        long oddDoubledNumber = 0;
-        int total = 0;
+        long evenDoubledNumber = 0;//Doubled digits of credit card
+        long oddDoubledNumber = 0;// Doubled digits of odd credit cards
+        int count = 0; //Counter
+        long evenDigit = 0; //Even digits number
+        long oddDigit = 0; //Odd digit numbers
+        int total = 0; //Total of odd and even placed numbers
+        //4388576018402626
+        //3434087203517768
+
 
 
         while(true){//While Loop
@@ -24,7 +27,7 @@ public class CreditCard {
 
                 while(creditCard != 0){//While
 
-                    System.out.println("Count: " + count + " Credit Card: " + creditCard);
+
 
 
                     if(count % 2 != 0) {
@@ -40,17 +43,16 @@ public class CreditCard {
 
                     creditCard /= 10;//Eliminate right most digit
 
-                    //4388576018402626
-                    //3434087203517768
 
                     count++;
                 }//End while
 
-                total = sumOfDoubleEvenPlace((int)evenDoubledNumber) + (int)sumOfOddPlace((int)oddDoubledNumber);
+                total = sumOfDoubleEvenPlace((int)evenDoubledNumber) + (int)sumOfOddPlace((int)oddDoubledNumber); // Add the total of odd and even placed numbers
+                isValid(total);
 
                 System.out.println(total);
 
-                //System.out.println("\nEven:" + evenDoubledNumber + "\n Odd: " + oddDoubledNumber);
+
                 break;
             }//End try
             catch(Exception e){//Catch
@@ -66,8 +68,9 @@ public class CreditCard {
      * @param number
      * @return
      */
-    /*public static boolean isValid(int number){
+    public static boolean isValid(int number){
 
+        return false;
     }
 
     /**
