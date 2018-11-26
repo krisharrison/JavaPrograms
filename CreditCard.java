@@ -5,6 +5,8 @@ public class CreditCard {
 
         Scanner input = new Scanner(System.in);
 
+        int [] prefix = {4, 5, 37, 6};
+        int matchedPrefix = 0;
         long evenDoubledNumber = 0;//Doubled digits of credit card
         long oddDoubledNumber = 0;// Doubled digits of odd credit cards
         int count = 0; //Counter
@@ -13,7 +15,7 @@ public class CreditCard {
         int total = 0; //Total of odd and even placed numbers
         //4388576018402626
         //3434087203517768
-
+        //5788576018402
 
 
         while(true){//While Loop
@@ -22,13 +24,19 @@ public class CreditCard {
                 System.out.print("\nEnter a valid number: ");
                 long creditCard = input.nextLong();//Input from user
 
+                System.out.println(getSize(creditCard));//Get credit card number size
 
+                for(int index = 0; index < prefix.length; index++){//Cycle through prefix array
+
+                    if(prefixMatched(creditCard,prefix[index]) == true){//prefixMatched == true
+                        matchedPrefix = prefix[index];//chosen prefix is stored in matchedPrefix
+                        break;//break;
+                    }
+
+                }//End for
 
 
                 while(creditCard != 0){//While
-
-
-
 
                     if(count % 2 != 0) {
                         evenDoubledNumber *= 10; //Shift numbers to the left
@@ -51,7 +59,6 @@ public class CreditCard {
                 isValid(total);
 
                 System.out.println(total);
-
 
                 break;
             }//End try
@@ -140,12 +147,51 @@ public class CreditCard {
 
     /**
      *Return true if digit d is a prefix for number
-     * @param number
+     //* @param number
      * @param d
      * @return
      */
-    /*public static boolean prefixMatched(int number, int d){
+    public static boolean prefixMatched(long number, int d){
 
+        long tempNumber = number; //TempNumber = number
+        long temp = 0; // temp = 0
+        int count = 0;// count = 0
+        long firstDigit; //FirstDigit
+        long secondDigit;//SecondDigit
+        long divisor = 1;//Divisor
+
+        while(tempNumber != 0){//while
+
+            temp *= 10;//temp * 10
+            temp += tempNumber % 10;//Temp + tempNumber
+            tempNumber /= 10;//TempNumber / 10
+
+            count++;//Increment by 1
+        }//end while
+
+        firstDigit = temp % 10;//firstDigit = temp % 10
+        temp /= 10;
+        secondDigit = temp % 10;//secondDigit = temp % 10*/
+        temp /= 10;
+
+
+
+        if(firstDigit == 3)//if
+            count -= 2;//decrement by 2
+        else//else
+            count--;//decrement by 1
+
+        for(int i = 0; i < count; i++){//for
+            divisor *= 10;//divisor *= 10
+        }//end for
+
+        number /= divisor;//get prefix
+
+        if(number == d){
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -153,8 +199,19 @@ public class CreditCard {
      * @param d
      * @return
      */
-   /* public static int getSize(int d){
+   public static int getSize(long d){
+       int count = 0;
+       long temp = 0;
 
+       while(d != 0){
+           temp *= 10;//Multiply temp by 10 to shift digits to the left
+           temp += (d % 10);//add right most digit to temp
+           d /= 10;//Divide d by 10
+
+           count++;//count++
+       }
+
+       return count;//return count
     }
 
     /**
@@ -164,7 +221,22 @@ public class CreditCard {
      * @param k
      * @return
      */
-    /*public static int getPrefix(int number, int k){
+    public static long getPrefix(long number, int k){
+        long temp = 0; //temp = 0
+        long tempNumber = number; //tempNumber = number
+        int count = 0; //count = 0
 
-    }*/
+        while(number != 0){//While
+            temp *= 10;
+            temp += tempNumber % 10;
+            tempNumber /= 10;
+
+            count++;
+        }//end while
+
+        if(count < k)
+            return number;
+        else
+            return -1;
+    }
 }
