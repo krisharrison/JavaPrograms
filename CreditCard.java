@@ -15,9 +15,7 @@ public class CreditCard {
         long evenDigit = 0; //Even digits number
         long oddDigit = 0; //Odd digit numbers
         int total = 0; //Total of odd and even placed numbers
-        //4388576018402626
-        //3734087203517768
-        //4388576018410707
+
 
 
         while(true){//While Loop
