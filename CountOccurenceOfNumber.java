@@ -1,16 +1,17 @@
-import java.util.Scanner;
+import java.util.Scanner;//Import Scanner
 
 public class CountOccurenceOfNumber {
     public static void main(String [] args){
 
-        Scanner input = new Scanner(System.in);
-        int numbers[] = new int[100];
-        int processedNumbers[];
-        int count[];
-        int i = 0;
-        int num = 0;
+        Scanner input = new Scanner(System.in);//Scanner
+        int numbers[] = new int[100];//numbers[] size 100
+        int distinct[];//distinct[]
+        int processedNumbers[];//processedNumbers[]
+        int count[];//count []
+        int i = 0;//i = 0;
+        int num = 0;//num = 0;
 
-        /*while(true){
+        while(true){
             try{
                 System.out.print("Enter the integers. Enter 0 when transaction if finished: ");
 
@@ -30,54 +31,29 @@ public class CountOccurenceOfNumber {
                     i++;
                 }
 
-                sortAscending(numbers);
-                displayArray(numbers);
-                eliminateZeros(numbers);
-                count = count(processedNumbers);
-
+                sortAscending(numbers);//Call sortAscending(numbers)
+                processedNumbers= eliminateZeros(numbers);// processedNumbers = Call eliminateZeros(numbers)
+                count = count(processedNumbers);//count = count(processedNumbers
+                distinct = distinctArray(processedNumbers);//distinct = distinctArray(processNumbers)
+                displayNumbers(count,distinct);//DisplayNumbers
 
                 break;
             }
             catch(Exception e){
-                System.out.print("Error! Enter a valid number!");
-                input.next();
+                System.out.print("Error! Enter a valid number!");//Display error message
+                input.next();//Next Line
             }
-        }*/
+        }
 
 
-        int array[] = new int[6];
-        array[0] = 2;
-        array[1] = 3;
-        array[2] = 2;
-        array[3] = 3;
-        array[4] = 5;
-        array[5] = 1;
 
-        displayArray(array);
-
-        for(int number:array)
-            System.out.print(number + " ");
     }
-
-    /**
-     * Display Array
-     * @param array
-     */
-    public static void displayArray(int array[]){
-
-        for(int num:array) {//For Loop: process array
-
-                System.out.print(num + " ");//Display element
-
-        }//End for loop
-    }
-
     /**
      * Sort array in ascending order
      * @param array
      * @return
      */
-    public static void sortAscending(int[] array){
+    public static int[] sortAscending(int[] array){
 
         for(int i =0; i < array.length - 1; i++){//Outer for loop: process array
             int currentMin = array[i];//currentMin = array[i]
@@ -87,14 +63,15 @@ public class CountOccurenceOfNumber {
                 if(array[j] < currentMin) {//If
                     currentMin = array[j];
                     currentMinIndex = j;
-                }
+                }//End if
             }//end inner loop
 
-            if(currentMinIndex != i)
-                array[currentMinIndex] = array[i];
+            if(currentMinIndex != i)//If currentMinIndex does not equal i
+                array[currentMinIndex] = array[i];//Switch lowest index with most left digit
                 array[i] = currentMin;
-
         }//end outer loop
+
+        return eliminateZeros(array);//Return eliminateZeros(array)
 
     }
 
@@ -106,14 +83,14 @@ public class CountOccurenceOfNumber {
    public static int[] count(int[] array){
         int count[] = new int[100];
 
-        for(int i=0;i<array.length;i++){
+        for(int i=0;i<array.length;i++){//Process array
             if(array[i] != 0)
-            count[array[i] - 1]++;
-        }
+            count[array[i] - 1]++;//Count appearance of each numbers
+        }//End for
 
-       eliminateZeros(count);
 
-        return count;
+        return eliminateZeros(count);//return eliminateZeros(count)
+
     }
 
     /**
@@ -121,7 +98,7 @@ public class CountOccurenceOfNumber {
      * @param array
      * @return
      */
-    public static void eliminateZeros(int array[]){
+    public static int[] eliminateZeros(int array[]){
         int count = 0;//count = 0
         for(int num:array) {//Determine size of array without zeros
             if (num != 0)
@@ -136,6 +113,7 @@ public class CountOccurenceOfNumber {
             }
         }//End For Loop
 
+        return copy;
     }
 
     /**
@@ -148,13 +126,15 @@ public class CountOccurenceOfNumber {
         int num= 0;//num = 0
 
         for(int i=0;i<numbers.length;i++){//process numbers array
-            num = numbers[i + 1];
-            if(){
-                copy[index++] = numbers[i];
+
+            if(numbers[i] != num){//If number[i] == num
+                copy[index++] = numbers[i];//copy[index++] = numbers[i]
+                num = numbers[i];//num = numbers[i]
             }
+
         }
 
-        return copy;
+        return eliminateZeros(copy);//Return copy
     }
 
     /**
@@ -163,7 +143,15 @@ public class CountOccurenceOfNumber {
      * @param numbers
      */
    public static void displayNumbers(int count[], int numbers[]){
+       System.out.println("\n");//Next Line
 
+        for(int i = 0;i<count.length;i++){//Process array
+            char plural = 's';//plural = 's'
+            if(count[i] > 1)//if count > 1
+                System.out.printf("%d occurs %d time%c\n",numbers[i],count[i],plural);//time += plural
+            else
+                System.out.printf("%d occurs %d time\n",numbers[i],count[i]);//time
+        }//End for loop
     }
 
 }
