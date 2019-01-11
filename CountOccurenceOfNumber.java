@@ -57,8 +57,8 @@ public class CountOccurenceOfNumber {
 
         for(int i =0; i < array.length - 1; i++){//Outer for loop: process array
             int currentMin = array[i];//currentMin = array[i]
-
             int currentMinIndex = i;//CurrentMinIndex = i
+
             for(int j=i + 1; j<array.length;j++){//Inner for loop: process araay
                 if(array[j] < currentMin) {//If
                     currentMin = array[j];

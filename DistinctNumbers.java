@@ -4,51 +4,44 @@ public class DistinctNumbers {
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);
-        int num = 0;
-        int count = 0;
-        int userNum;
-        int distinctNumbers[];//Distinct array of numbers
-        int userArray [] = new int[10];
+        int count = 0;//count = 0
+        int userNum; // Init userNum
+        int userArray [] = new int[10];//userArray
 
-        System.out.print("\nEnter in 10 digits: ");
 
-        while(true) {
+                System.out.print("\nEnter in 10 digits: ");//Ask for input
+
+        while(true) {//While true
             try {
+                    if(count == 10){ // if count > 10
 
-                userNum = input.nextInt();
+                             int distinctNumbers[] = getDistinct(userArray);//call distinctNumbers
+                            displayResults(distinctNumbers);//call displayResults*/
 
-                if(isNumValid(userNum) == true){
-                    for(int i=0;i<userArray.length;i++){
-                        if(userNum == userArray[i]){
-                            break;
-                        }
-                        else {
-                            userArray[1] = userNum;
-                            count++;
-                        }
-
-                        userArray[i] = userNum;
+                             break; //break
                     }
-               }
-                else{
-                    System.out.print("\nPlease enter a number greater than 0: ");
-                    num--;
-                }
 
-                //num++;
+                    userNum = input.nextInt();//Gain user input
 
-                break;
+                    if(isNumValid(userNum) == true){//If number is > 0
+
+                        userArray[count] = userNum;//Add to array
+                    }
+                    else if(isNumValid(userNum) == false){
+                        System.out.print("\nPlease enter a number greater than 0: ");
+                        count--;
+                    }
 
 
-            } catch (Exception e) {
+
+                    count++;//count increment by 1
+
+            }//End while
+            catch (Exception e) {//Catch
                 System.out.println("\nError! Enter a valid number " +
-                                  "\nError Message: " + e.toString());
+                                  "\nError Message: " + e.toString());//Display error message
             }
         }
-
-       displayResults(userArray);
-
-
 
 
     }
@@ -58,24 +51,16 @@ public class DistinctNumbers {
      * @param distinctNumbers
      */
     public static void displayResults(int distinctNumbers[]){
-
-         sortAscending(distinctNumbers);
           System.out.println();
-          System.out.println();
-          int count = 0;
-        for(int element:distinctNumbers){
-            if(element != 0){
-                count++;
-            }
-        }
 
-        System.out.print("The number of distinct numbers are: " + count);
+        System.out.print("The number of distinct numbers are: " + distinctNumbers.length);
 
+        System.out.print("\nThe distinct numbers is: ");
         for(int element:distinctNumbers){
-            if(element != 0){
-                System.out.print("The distinct numbers is: " + element + " ");
-            }
+                System.out.print(element + " ");
+
         }
+        System.out.println();
 
     }
 
@@ -93,6 +78,51 @@ public class DistinctNumbers {
     }
 
     /**
+     * Eliminate 0's in an array
+     * @param array
+     * @return
+     */
+    public static int[] eliminateZeroes(int array[]){
+        int count = 0;//count = 0
+        for(int num:array) {//Determine size of array without zeros
+            if (num != 0)
+                count++;//count increment + 1
+        }//End for loop
+
+        int copy[] = new int[count];//New array of size count
+        int index = 0;
+        for(int i = 0; i < array.length; i++) {//copy array[] to copy[]
+            if (array[i] != 0) {//If array at i != 0
+                copy[index++] = array[i];//Copy at index i = array
+            }
+        }//End For Loop
+
+        return copy;
+    }
+    /**
+     * Eliminates duplicates from array
+     * @param numbers
+     */
+    public static int[] getDistinct(int numbers[]){
+        int copy[] = new int[numbers.length];//Copy array length of numbers.length
+        int index= 0;//index = 0
+        int num= 0;//num = 0
+        sortAscending(numbers);
+
+        for(int i=0;i<numbers.length;i++){//process numbers array
+
+            if(numbers[i] != num){//If number[i] == num
+                copy[index++] = numbers[i];//copy[index++] = numbers[i]
+                num = numbers[i];//num = numbers[i]
+            }
+
+        }
+
+        return eliminateZeroes(copy);//Return copy
+    }
+
+
+    /**
      * Return array sorted in ascended order using selection sort
      * @param array
      */
@@ -103,7 +133,8 @@ public class DistinctNumbers {
 
             int currentMin = array[i];
             int currentMinIndex = i;
-            for(int j=1;j<array.length;i++){
+
+            for(int j= i + 1;j<array.length;j++){
                 if(array[j] < currentMin){
                     currentMin = array[j];
                     currentMinIndex = j;
