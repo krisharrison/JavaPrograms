@@ -13,7 +13,7 @@ public class CountOccurenceOfNumber {
 
         while(true){
             try{
-                System.out.print("Enter the integers. Enter 0 when transaction if finished: ");
+                System.out.print("\nEnter the integers. Enter 0 when transaction if finished: ");
 
                 while(true){
                     num = input.nextInt();
