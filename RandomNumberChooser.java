@@ -5,7 +5,7 @@ public class RandomNumberChooser {
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);//Scanner;
-        System.out.print("Enter 10 digits: ");//Display Message
+        System.out.print("Enter 4 digits: ");//Display Message
 
 
 
@@ -14,7 +14,7 @@ public class RandomNumberChooser {
 
                 int userNum = input.nextInt();//userNum = input.nextInt()
 
-                if(!isValid(userNum) || userNum == 0){//Else
+                if(!isValid(userNum) || userNum == 0){//Else //34 45 1 20
                     break;
                 }//End else
                 else{//If userNum is valid
@@ -29,9 +29,6 @@ public class RandomNumberChooser {
               input.next();//Next line
             }//End catch
         }//End while
-
-
-        //34 45 1 20
     }
 
 
@@ -53,32 +50,30 @@ public class RandomNumberChooser {
      */
     public static int getRandom(int...numbers){
         Random rand = new Random();//Random object
-        int randNum = 0;
-        int count = 0;
-        /*for(int i = 0; i < numbers.length;i++)//Process array
-         if(randNum == numbers[i]){//Outer If
-             if(randNum == 54) {//Inner If randNum == 54
-                 randNum -= 1;
-             }//End inner if
-             else{//Else
-                 randNum++;//Increment by 1
-             }//Else
-         }//End outer if*/
+        int randNum = 0;//randNum
+        int count = 0;//Count = 0
+        int index = 0;
 
 
-        while(count != numbers.length){//While
+        while(count < numbers.length){//While
             randNum = (rand.nextInt(54) + 1);//Random number between 1 and 54
-            count = 0;//Reset count
 
 
+            /*
+            Does not matter if random numbers being returned are the same, as long as they're between 1 and 54
+            and not the numbers that are entered
+
+            Try to compare random number to each number in the numbers array.
+            If random number does not match any of the numbers in the array.
+            return randNum.
+            Else assign a new random number to randNum until a random number is stored in randNum does not equal
+            any of the numbers stored in the numbers array
+             */
 
             for(int i=0;i<numbers.length;i++){//for
-                if(randNum != numbers[i]) {//if randNum != numbers[i]
-                    count++;//increment by 1
-                }
-                else if(randNum == numbers[i]){
-                    count--;
-                }
+               if(numbers[i] == randNum){
+                    break;
+               }
 
             }//end for
 

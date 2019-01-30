@@ -10,13 +10,13 @@ public class BinarySearch {
         int key = input.nextInt();
 
         int num [] = {3,45,8,10,23,37,1,32,4,8};
-        Arrays.sort(num);
+
 
         displayResults(num,key);
 
     }
     public static void displayResults(int numbers[], int key){
-        int result = binarySort(numbers,key);
+        int result = binarySearch(numbers,key);
 
         if(result < 0){
             System.out.print("Key Not Found!");
@@ -25,7 +25,7 @@ public class BinarySearch {
             System.out.print("Key found at index: " + result);
         }
     }
-    public static int binarySort(int numbers [], int key){
+    public static int binarySearch(int numbers [], int key){
         int low = 0;
         int high = numbers.length - 1;
         int mid;
