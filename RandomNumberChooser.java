@@ -1,34 +1,35 @@
 import java.util.Random;
 import java.util.Scanner;
 
+/*
+I'm aware I could of passed an array through displayResults because it would be a lot less code and a lot cleaner
+In the spirit of the exercise I chose to as for each individual digit and pass each digit using variable-length argument list.
+ */
+
 public class RandomNumberChooser {
     public static void main(String [] args){
 
         Scanner input = new Scanner(System.in);//Scanner;
-        System.out.print("Enter 4 digits: ");//Display Message
+        System.out.print("Enter 10 digits: ");//Display Message
+        //34 45 1 20 12 4 8 40 18 39
+
+
+        int userNum = input.nextInt();//userNum = input.nextInt()
+        int userNum2 = input.nextInt();//userNum = input.nextInt()
+        int userNum3 = input.nextInt();//userNum = input.nextInt()
+        int userNum4 = input.nextInt();//userNum = input.nextInt()
+        int userNum5 = input.nextInt();//userNum = input.nextInt()
+        int userNum6 = input.nextInt();//userNum = input.nextInt()
+        int userNum7 = input.nextInt();//userNum = input.nextInt()
+        int userNum8 = input.nextInt();//userNum = input.nextInt()
+        int userNum9 = input.nextInt();//userNum = input.nextInt()
+        int userNum10 = input.nextInt();//userNum = input.nextInt()
 
 
 
-        while(true){//While
-            try{//Try
-
-                int userNum = input.nextInt();//userNum = input.nextInt()
-
-                if(!isValid(userNum) || userNum == 0){//Else //34 45 1 20
-                    break;
-                }//End else
-                else{//If userNum is valid
-                    displayResults(userNum);//Call displayResults
-                }//End if
+        displayResults(userNum,userNum2, userNum3, userNum4, userNum5, userNum6, userNum7, userNum8, userNum9, userNum10);//Call displayResults
 
 
-
-            }//End try
-            catch(Exception e){//Catch
-              System.out.print("\nError!Enter a number! ");//Error message
-              input.next();//Next line
-            }//End catch
-        }//End while
     }
 
 
@@ -38,9 +39,8 @@ public class RandomNumberChooser {
      */
     public static void displayResults(int...numbers){
         //Display results
-        for(int e:numbers){
-            System.out.printf(" %d", getRandom(e));
-        }
+
+        System.out.printf("\nYour number: %d\n", getRandom(numbers));
     }
 
     /**
@@ -51,31 +51,20 @@ public class RandomNumberChooser {
     public static int getRandom(int...numbers){
         Random rand = new Random();//Random object
         int randNum = 0;//randNum
-        int count = 0;//Count = 0
-        int index = 0;
+        int counter = 0;//counter = 0
 
-
-        while(count < numbers.length){//While
+        while(counter < numbers.length){//While
             randNum = (rand.nextInt(54) + 1);//Random number between 1 and 54
+            counter = 0;//innerCounter = 0
 
-
-            /*
-            Does not matter if random numbers being returned are the same, as long as they're between 1 and 54
-            and not the numbers that are entered
-
-            Try to compare random number to each number in the numbers array.
-            If random number does not match any of the numbers in the array.
-            return randNum.
-            Else assign a new random number to randNum until a random number is stored in randNum does not equal
-            any of the numbers stored in the numbers array
-             */
 
             for(int i=0;i<numbers.length;i++){//for
-               if(numbers[i] == randNum){
-                    break;
-               }
 
+                if(randNum != numbers[i]) {
+                    counter++;
+                }
             }//end for
+
 
         }//End while
 
