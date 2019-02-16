@@ -20,11 +20,11 @@ public class SortStudent {
                     break;//Break;
                 }
                 else {
-                    System.out.println("Error! Enter an integer for the number of students: ");//Display error message
+                    System.out.println("\nError! Enter an integer for the number of students: ");//Display error message
                 }
             }//End try
             catch(Exception e){//Catch
-                System.out.println("Error! Enter a valid integer for the numbers of students: ");//Display error message
+                System.out.println("\nError! Enter a valid integer for the numbers of students: ");//Display error message
                 input.next();//Next line
             }
         }//End catch
@@ -34,7 +34,29 @@ public class SortStudent {
         String name;//student name
         int score;//Student score
 
-        System.out.println();//Next Line
+        System.out.println("Enter " + numOfStudents +" students and scores: ");//Next Line
+
+        /*
+        Sample input:
+                  OLIVIA  45
+	              RUBY	90
+	              EMILY 92
+	              GRACE	67
+	              JESSICA 71
+	              CHLOE	89
+	              SOPHIE 82
+	              LILY	56
+	              AMELIA 79
+	              EVIE 66
+	              MIA 52
+	              ELLA	98
+	              CHARLOTTE	49
+	              LUCY	77
+	              MEGAN	87
+	              ELLIE	59
+	              ISABELLE 80
+	              */
+
 
         //Get students names and scores
         while(i < numOfStudents){
@@ -49,19 +71,19 @@ public class SortStudent {
                     scores[i] = score;//scores[i] = score
                 }//end if
                 else{//Else
-                    System.out.println("Error! Enter a valid name and score!");
+                    System.out.println("\nError! Enter a valid name and score!");
                     i--;
                 }//End else
 
                 i++;
             }//End try
             catch(Exception e){//Catch
-                System.out.println("Error! Enter a valid name or score!");//Display error message
+                System.out.println("\nError! Enter a valid name or score!");//Display error message
                 input.next();//Next line
             }//End catch
         }
 
-
+        displayResults(names, scores);
 
     }
 
@@ -71,6 +93,13 @@ public class SortStudent {
      * @param scores
      */
     public static void displayResults(String [] names, int [] scores){
+
+        System.out.println();
+        System.out.println("Student\t\t  Score");
+        sortDecresing(names, scores);
+        for(int i = 0;i<names.length;i++) {
+            System.out.printf("%-10s\t%5d\n", names[i], scores[i]);
+        }
 
     }
 
@@ -87,9 +116,20 @@ public class SortStudent {
             int currentMaxIndex = i;
 
             for(int j = i + 1; j < names.length; j++){
-                if(names[i].toUpperCase().compareTo(currentMaxName.toUpperCase()) < 0){
-                        
+                if(names[j].toUpperCase().compareTo(currentMaxName.toUpperCase()) > 0){
+                    currentMaxName = names[j];
+                    currentMaxScore = scores[j];
+                    currentMaxIndex = j;
+
                 }
+            }
+
+            if(i != currentMaxIndex){
+                names[currentMaxIndex] = names[i];
+                names[i] = currentMaxName;
+                scores[currentMaxIndex] = scores[i];
+                scores[i] = currentMaxScore;
+
             }
         }
     }
