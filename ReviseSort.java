@@ -8,7 +8,7 @@ public class ReviseSort {
         int k = 0;//k = 0;
         int n = list.length;//n = 10
         double userNum;//userNum
-        //2.3 -10 60.4 22.1 19.0 210.12 92.9 189.2 43.89 -42.39
+        // 1092.9 2.3 -110 60.4 22.1 519.0 210.12  89.2 43.89 -420.39
 
         System.out.print("Enter 10 digits: ");
 
