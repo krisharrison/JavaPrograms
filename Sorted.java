@@ -56,7 +56,6 @@ public class Sorted {
      * @param list
      * @return
      */
-
     public static boolean isSorted(int [] list){
 
         int front = 0;//Front = 0
@@ -65,15 +64,15 @@ public class Sorted {
         while(front <= back){//while front <=  back
 
             //Determine whether elements are sorts in ascending order
-            if(list[front] > list[front+1] || list[back-1] > list[back]){
-                return false;//Return false
+            if(list[front] <= list[front+1] || list[back-1] <= list[back]){
+                return true;//Return false
             }
 
 
             front++;//increment from by 1
             back--;//decrement back by 1
         }
-        return true;
+        return false;
     }
 
     /**
